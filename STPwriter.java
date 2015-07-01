@@ -30,7 +30,7 @@ public class STPwriter {
 		this.tree = tree;
 		this.numberEdges = tree.nedges;
 		for(int i = 0; i < this.tree.edgelist.size(); i++){
-			this.cost += this.tree.edgelist.get(i).weight;
+			this.cost += this.tree.edgelist.get(i).orig_weight;
 		}
 	}
 
@@ -54,6 +54,7 @@ public class STPwriter {
             	output.write(String.valueOf(this.tree.edgelist.get(i).end));
             	output.write(System.lineSeparator());
             }
+            System.out.println("file printed successfully");
             
         } catch ( IOException e ) {
             e.printStackTrace();
